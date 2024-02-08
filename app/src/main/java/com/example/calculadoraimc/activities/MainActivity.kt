@@ -16,5 +16,8 @@ class MainActivity : AppCompatActivity() {
         val btnCalc:AppCompatButton=findViewById(R.id.btn_Calcular)
 
         btnCalc.setOnClickListener({userEditText.setText("Has pulsado calcular")})
+
+        // El índice de masa corporal (IMC) es el peso de una persona en kilogramos dividido por
+        // el cuadrado de la estatura en metros.
     }
 }

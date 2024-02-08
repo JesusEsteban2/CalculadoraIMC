@@ -53,32 +53,30 @@
 
     <EditText
         android:id="@+id/editTex3"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:hint="Escriba la edad"
         app:layout_constraintStart_toStartOf="@id/editTex2"
         app:layout_constraintTop_toBottomOf="@id/editTex2" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:
+        android:id="@+id/imagebMas"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:srcCompat="@mipmap/ic_add_round"
         app:layout_constraintStart_toEndOf="@id/editTex3"
         app:layout_constraintTop_toTopOf="@id/editTex3"
         />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:
+        android:id="@+id/imagebMenos"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:srcCompat="@mipmap/ic_less_round"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toEndOf="@id/imageButton1"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toEndOf="@id/imagebMas"
         app:layout_constraintTop_toTopOf="@id/editTex3"
-        />
+         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_Calcular"
@@ -88,7 +86,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="54dp"
+        android:layout_height="49dp"
+        android:clickable="true"
+        app:backgroundTint="#2A7515"
+        app:srcCompat="@drawable/ic_add_foreground"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="214dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
