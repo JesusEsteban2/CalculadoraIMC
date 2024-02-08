@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textvAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Altura:"
+        android:textSize="30dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edittAltura"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Escriba la altura"
+        app:layout_constraintStart_toEndOf="@+id/textvAltura"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textvPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Peso:"
+        android:textSize="30dp"
+        app:layout_constraintTop_toBottomOf="@id/edittAltura" />
+
+    <EditText
+        android:id="@+id/editTex2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Escriba el peso"
+        app:layout_constraintStart_toStartOf="@id/edittAltura"
+        app:layout_constraintTop_toBottomOf="@id/edittAltura"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Edad:"
+        android:textSize="30dp"
+        app:layout_constraintTop_toBottomOf="@id/editTex2" />
+
+    <EditText
+        android:id="@+id/editTex3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Escriba la edad"
+        app:layout_constraintStart_toStartOf="@id/editTex2"
+        app:layout_constraintTop_toBottomOf="@id/editTex2" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:
+        app:srcCompat="@mipmap/ic_add_round"
+        app:layout_constraintStart_toEndOf="@id/editTex3"
+        app:layout_constraintTop_toTopOf="@id/editTex3"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:
+        app:srcCompat="@mipmap/ic_less_round"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/imageButton1"
+        app:layout_constraintTop_toTopOf="@id/editTex3"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_Calcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
