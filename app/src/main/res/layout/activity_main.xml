@@ -41,10 +41,21 @@
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:hint="Escriba el peso"
-        android:text="70"
+        android:text="100"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="@id/edittAltura"
         app:layout_constraintTop_toBottomOf="@id/edittAltura"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slicerPeso"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:value="100"
+        android:valueFrom="1"
+        android:valueTo="200"
+        app:layout_constraintStart_toStartOf="@id/textvPeso"
+        app:layout_constraintTop_toBottomOf="@id/editTPeso"/>
+
 
     <TextView
         android:id="@+id/textVEdad"
@@ -53,7 +64,7 @@
         android:gravity="center"
         android:text="Edad:"
         android:textSize="30dp"
-        app:layout_constraintTop_toBottomOf="@id/editTPeso" />
+        app:layout_constraintTop_toBottomOf="@+id/slicerPeso" />
 
     <EditText
         android:id="@+id/editTEdad"
@@ -62,8 +73,8 @@
         android:hint="Escriba la edad"
         android:text="35"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="@id/editTPeso"
-        app:layout_constraintTop_toBottomOf="@id/editTPeso" />
+        app:layout_constraintStart_toStartOf="@+id/editTPeso"
+        app:layout_constraintTop_toBottomOf="@+id/slicerPeso" />
 
     <ImageButton
         android:id="@+id/imageBMenos"
