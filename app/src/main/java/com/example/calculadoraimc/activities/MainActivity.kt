@@ -11,6 +11,7 @@ import com.example.calculadoraimc.R
 import com.google.android.material.slider.Slider
 import kotlin.math.roundToInt
 
+
 // El índice de masa corporal (IMC) es el peso de una persona en kilogramos dividido por
 // el cuadrado de la estatura en metros.
 class MainActivity : AppCompatActivity() {
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnMasEdad:ImageButton
     lateinit var btnMenosEdad:ImageButton
     lateinit var sliderPeso:Slider
+    lateinit var textDesImc:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         btnMasEdad=findViewById(R.id.imageBMas)
         btnMenosEdad=findViewById(R.id.imageBMenos)
         sliderPeso=findViewById(R.id.sliderPeso)
+        textDesImc=findViewById(R.id.textDesImc)
 
         btnCalc.setOnClickListener{calcularImc()}
         btnMasEdad.setOnClickListener{incrementaEdad()}
@@ -44,24 +47,27 @@ class MainActivity : AppCompatActivity() {
             userEditPeso.setText(value.toInt().toString())
         }
 
-        //val intent:Intent=Intent(this,DetailActivitY::class.java)
-        // intent.putExtra("EXTRA_NAME", name)
-        // startActivity(intent)
-        // En el otro Layout recojo el parámetro con
-        // var nameExtra=intent.get.StringExtra("EXTRA_NAME") ?: "usuario"
-        //Ver operador Elvis.
 
     }
         private fun calcularImc() {
             var altura:Double=userEditAltura.text.toString().toDouble()
             var peso:Double=userEditPeso.text.toString().toDouble()
-            var imc:Double=0.00
+            var imc:Double
 
             altura=altura/100
             altura=altura*altura
             imc=peso/altura
             imc=(imc * 100.0).roundToInt()/ 100.0
             userEditImc.setText(imc.toString())
+            when (imc){
+                in 1.00..18.50 -> textDesImc.text="Peso Bajo"
+                in 18.50..24.99 -> textDesImc.text="Peso óptimo"
+                in 24.99 .. 29.99 -> textDesImc.text="Sobrepeso"
+                in 29.99..34.99 -> textDesImc.text="Obesidad G1"
+                in 34.99..39.99 -> textDesImc.text="Obesidad G2"
+                in 39.99..50.00 -> textDesImc.text="Obesidad G3"
+                else -> textDesImc.text="Fuera de rango"
+            }
         }
         private fun incrementaEdad() {
             var edad:Int=userEditEdad.text.toString().toInt()
