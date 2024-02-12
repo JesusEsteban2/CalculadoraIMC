@@ -2,12 +2,13 @@ package com.example.calculadoraimc.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import com.example.calculadoraimc.R
+import kotlin.math.pow
 import kotlin.math.roundToInt
 
 // El índice de masa corporal (IMC) es el peso de una persona en kilogramos dividido por
@@ -15,38 +16,32 @@ import kotlin.math.roundToInt
 class MainActivity : AppCompatActivity() {
 
     lateinit var userEditAltura:EditText
-    lateinit var userEditPeso:EditText
+    lateinit var userEditAPeso:EditText
     lateinit var userEditEdad:EditText
     lateinit var userEditImc:TextView
     lateinit var btnCalc:AppCompatButton
     lateinit var btnMasEdad:ImageButton
     lateinit var btnMenosEdad:ImageButton
-    lateinit var barPeso:SeekBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         userEditAltura = findViewById(R.id.edittAltura)
-        userEditPeso = findViewById(R.id.editTPeso)
+        userEditAPeso = findViewById(R.id.editTPeso)
         userEditEdad= findViewById(R.id.editTEdad)
         userEditImc= findViewById(R.id.textvImcValue)
         btnCalc= findViewById(R.id.btn_Calcular)
         btnMasEdad=findViewById(R.id.imageBMas)
         btnMenosEdad=findViewById(R.id.imageBMenos)
-        barPeso=findViewById(R.id.sliderBPeso)
 
         btnCalc.setOnClickListener{calcularImc()}
         btnMasEdad.setOnClickListener{incrementaEdad()}
         btnMenosEdad.setOnClickListener{decrementaEdad()}
-        barPeso.setOnSeekBarChangeListener
     }
-        private fun barraPeso(){
-            userEditPeso.setText(barPeso.progress.toString())
-        }
         private fun calcularImc() {
             var altura:Double=userEditAltura.text.toString().toDouble()
-            var peso:Double=userEditPeso.text.toString().toDouble()
+            var peso:Double=userEditAPeso.text.toString().toDouble()
             var imc:Double=0.00
 
             altura=altura/100
@@ -67,6 +62,3 @@ class MainActivity : AppCompatActivity() {
             userEditEdad.setText(edad.toString())
         }
 }
-
-
-
